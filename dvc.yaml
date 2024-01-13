@@ -13,3 +13,9 @@ stages:
     params:
     - make_dataset.test_split
     - make_dataset.seed    
+
+  train_model:
+    cmd: python .\src\models\train_model.py 
+    deps:
+    - .\data\processed\
+    - .\src\models\train_model.py

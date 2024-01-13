@@ -26,3 +26,15 @@ stages:
       params.yaml:
         make_dataset.seed: 2023
         make_dataset.test_split: 0.2
+  train_model:
+    cmd: python .\src\models\train_model.py .\data\processed\
+    deps:
+    - path: .\data\processed\
+      hash: md5
+      md5: 783c6c256ebda2ae0170464fa76d21d3.dir
+      size: 984253
+      nfiles: 5
+    - path: .\src\models\train_model.py
+      hash: md5
+      md5: ad46039e3a414c087cbe9b26169538c9
+      size: 2874
