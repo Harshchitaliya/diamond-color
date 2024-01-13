@@ -1,0 +1,13 @@
+schema: '2.0'
+stages:
+  build_features:
+    cmd: python .\src\features\build_features.py
+    deps:
+    - path: .\data\raw\dfcolor.csv
+      hash: md5
+      md5: 4fe0277b506e7cb1481222a0453f2fbc
+      size: 17182745
+    - path: .\src\features\build_features.py
+      hash: md5
+      md5: 168238d7bdc38224b2930a98c81fc33c
+      size: 1868
