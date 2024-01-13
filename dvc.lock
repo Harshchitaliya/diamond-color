@@ -11,3 +11,18 @@ stages:
       hash: md5
       md5: 168238d7bdc38224b2930a98c81fc33c
       size: 1868
+  make_dataset:
+    cmd: python .\src\data\make_dataset.py
+    deps:
+    - path: .\data\build_data\df.csv
+      hash: md5
+      md5: 2ca431aacccab03b60f485b1eab3a016
+      size: 2630100
+    - path: .\src\data\make_dataset.py
+      hash: md5
+      md5: 182de60c5659623232646684504c5216
+      size: 1853
+    params:
+      params.yaml:
+        make_dataset.seed: 2023
+        make_dataset.test_split: 0.2

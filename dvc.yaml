@@ -1,6 +1,15 @@
 stages:
- build_features:
+  build_features:
     cmd : python .\src\features\build_features.py
     deps:
     - .\data\raw\dfcolor.csv
     - .\src\features\build_features.py
+
+  make_dataset:
+    cmd : python .\src\data\make_dataset.py
+    deps:
+    - .\data\build_data\df.csv
+    - .\src\data\make_dataset.py
+    params:
+    - make_dataset.test_split
+    - make_dataset.seed    
