@@ -27,7 +27,7 @@ stages:
         make_dataset.seed: 2023
         make_dataset.test_split: 0.2
   train_model:
-    cmd: python .\src\models\train_model.py .\data\processed\
+    cmd: python .\src\models\train_model.py
     deps:
     - path: .\data\processed\
       hash: md5
@@ -38,3 +38,19 @@ stages:
       hash: md5
       md5: ad46039e3a414c087cbe9b26169538c9
       size: 2874
+  visualize:
+    cmd: python .\src\visualization\visualize.py .\models\model.joblib .\data\processed\
+    deps:
+    - path: .\data\processed\
+      hash: md5
+      md5: 783c6c256ebda2ae0170464fa76d21d3.dir
+      size: 984253
+      nfiles: 5
+    - path: .\models\model.joblib
+      hash: md5
+      md5: bc07766deed61cb24ffdd452713fe000
+      size: 1266380
+    - path: .\src\visualization\visualize.py
+      hash: md5
+      md5: ef8573790ec664c976134a855cb3ee29
+      size: 1565
