@@ -1,0 +1,6 @@
+stages:
+ build_features:
+  cmd : python .\src\features\build_features.py
+    deps:
+    - .\data\raw\dfcolor.csv
+    - .\src\features\build_features.py
